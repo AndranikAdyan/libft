@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 19:51:48 by aadyan            #+#    #+#             */
-/*   Updated: 2024/08/01 19:52:53 by aadyan           ###   ########.fr       */
+/*   Created: 2024/08/01 19:55:12 by aadyan            #+#    #+#             */
+/*   Updated: 2024/08/01 20:07:58 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isalpha(int ch)
-{
-	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-		return (1);
-	return (0);
-}
+# include <stdio.h>
+
+int	ft_isalpha(int ch);
+
+#endif
