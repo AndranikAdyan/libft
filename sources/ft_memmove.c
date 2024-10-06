@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 20:57:06 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/02 21:13:52 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/06 23:39:20 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			d[i] = s[i - 1];
 			i--;
 		}
+		return (dest);
 	}
-	else
+	i = 0;
+	while (i < n)
 	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			++i;
-		}
+		d[i] = s[i];
+		++i;
 	}
 	return (dest);
 }
