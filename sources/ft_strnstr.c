@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 17:05:38 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/02 21:15:28 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/02 20:56:27 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/02 21:15:49 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strnstr(char *str, char *to_find, int n)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
+	int		i;
+	int		k;
+	int		size;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	if (!to_find[0])
+		return (str);
+	size = ft_strlen(to_find);
 	i = 0;
-	while (i < size - 1 && i < src_len)
+	k = 0;
+	while (str[i] && i < n)
 	{
-		dst[dst_len + i] = src[i];
-		++i;
+		if (str[i] == to_find[k])
+		{
+			k++;
+			if (k == size)
+				return (str + i - size + 1);
+		}
+		else
+		{
+			i = i - k;
+			k = 0;
+		}
+		i++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	return (0);
 }

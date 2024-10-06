@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 17:05:38 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/02 21:15:28 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/02 12:11:32 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/02 21:16:00 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
+	unsigned int	i;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
 	i = 0;
-	while (i < size - 1 && i < src_len)
+	while (s1[i] && s2[i] && i < n)
 	{
-		dst[dst_len + i] = src[i];
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		++i;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	if ((s1[i] || s2[i]) && i != n)
+		return (s1[i] - s2[i]);
+	return (0);
 }
