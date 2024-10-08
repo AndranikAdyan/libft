@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:11:32 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/06 23:40:23 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/08 23:59:53 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
 		++i;
 	}
-	if ((s1[i] || s2[i]) && i != n)
-		return (s1[i] - s2[i]);
+
 	return (0);
 }
