@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 19:55:12 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/06 23:41:05 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/09 00:57:51 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n);;
+void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int ch);
 int		ft_isalpha(int ch);
 int		ft_isascii(int ch);
@@ -31,14 +31,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(char *str, char *to_find, int n);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*ft_strdup(char *src);
-void	*calloc(size_t nmemb, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *str, int ch);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
-//memcmp
-//atoi
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_atoi(const char *nptr);
 
 
 #endif
