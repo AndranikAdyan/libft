@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:47:54 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/09 13:44:02 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/09 14:07:05 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ int	get_count(char const *str, char const *chrs)
 	return (count);
 }
 
-#include <stdio.h>
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
