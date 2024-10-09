@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/09 16:38:39 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/09 16:43:14 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char const *argv[])
 {
-	printf("=%s=\n", ft_strtrim("123asd212", "asd"));
+	printf("=%s=\n", ft_strjoin("Hello ", "world"));
 	(void)argc;
 	(void)argv;
 	return (0);
