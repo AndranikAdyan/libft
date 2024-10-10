@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/10 10:22:32 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/10 10:41:12 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int	main(int argc, char const *argv[])
 {
-	printf("=%s=", ft_strjoin("Hello ", "world"));
+	char *arr;
+	printf("=%s=", ft_strjoin(arr, ""));
 	(void)argc;
 	(void)argv;
 	return (0);
