@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:29:09 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 17:34:02 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/11 17:43:13 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	int		n;
 	char	c;
