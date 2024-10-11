@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 19:55:12 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 16:33:42 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/11 16:54:11 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int ch);
@@ -44,5 +46,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int nb);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 
 #endif
