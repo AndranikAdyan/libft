@@ -1,43 +1,35 @@
 NAME			= libft.a
 
-BUILD			= ./build
+SRCS			= $(shell find . -name '*.c' ! -name 'ft_lst*.c')
 
-SRC				= ./sources
+OBJS			= $(SRCS:.c=.o)
 
-SRCS			= $(shell find $(SRC) -name '*.c')
+BONUS			= $(shell find . -name 'ft_lst*.c')
 
-OBJS			= $(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SRCS))
+BONUS_OBJS		= $(BONUS:.c=.o)
 
-INCS			= -I./includes
-
-HEADER			= ./includes/libft.h
-
+HEADER			= libft.h
 RM				= rm -f
-
 AR				= ar rcs
-
 CC				= cc
-
 FLAGS 			= -Wall -Wextra -Werror
 
-$(BUILD)/%.o:	$(SRC)/%.c $(HEADER) Makefile
-		@$(CC) $(FLAGS) $(INCS) -c $< -o $@
+%.o: %.c		$(HEADER) Makefile
+					$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-all:			$(BUILD) $(NAME)
+all:			$(NAME)
 
 $(NAME):		$(OBJS) 
-		@$(AR) $(NAME) $(OBJS)
+					$(AR) $(NAME) $(OBJS)
 
-$(BUILD):
-		@mkdir -p $(BUILD)
+clean:	
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
-clean:
-		@rm -rf $(BUILD)
-
-fclean:
-		@rm -rf $(BUILD)
-		@$(RM) $(NAME)
+fclean:			clean
+					$(RM) $(NAME)
 
 re: 			fclean all
+bonus:			$(OBJS) $(BONUS_OBJS)
+					$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re bonus
