@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 19:55:12 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 15:42:55 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/11 16:33:42 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int nb);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
