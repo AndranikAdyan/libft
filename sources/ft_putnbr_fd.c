@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 17:35:02 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/11 17:29:09 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/11 17:34:02 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char const *argv[])
+void ft_putnbr_fd(int nb, int fd)
 {
-	int fd = open("./a.txt", O_CREAT | O_WRONLY | O_TRUNC);
-	printf("fd: %d\n", fd);
-	if (fd != -1)
-		ft_putnbr_fd(2147483647, fd);
-	(void)argc;
-	(void)argv;
-	close(fd);
-	return (0);
+	int		n;
+	char	c;
+
+	if (nb == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = -nb;
+	}
+	n = 1;
+	while (nb / n >= 10)
+		n *= 10;
+	while (n > 0)
+	{
+		c = (nb / n) + '0';
+		ft_putchar_fd(c, fd);
+		nb = nb % n;
+		n /= 10;
+	}
 }
