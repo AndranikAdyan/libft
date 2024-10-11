@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 16:09:15 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/11 15:54:12 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/11 16:10:38 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char const *argv[])
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	(void)argc;
-	(void)argv;
-	return (0);
+	int		i;
+	char	*str;
+
+	if (!s || !f)
+		return (NULL);
+	str = (char *)malloc(ft_strlen(s) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(1, s[i]);
+		++i;
+	}
+	return (str);
 }
