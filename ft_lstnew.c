@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.C                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/14 16:38:54 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/14 15:35:48 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/14 16:12:34 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	int		a;
 	t_list	*lst;
 
-	lst = ft_lstnew(&a);
-	a = 19;
-	printf("==%d==", *(int *)lst->content);
-	(void)argc;
-	(void)argv;
-	return (0);
+	lst = (t_list *)malloc(sizeof(t_list));
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

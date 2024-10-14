@@ -17,7 +17,7 @@ FLAGS 			= -Wall -Wextra -Werror
 %.o: %.c		$(HEADER) Makefile
 					@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-all:			$(NAME)
+all:			$(NAME) bonus
 
 $(NAME):		$(OBJS) 
 					@$(AR) $(NAME) $(OBJS)
