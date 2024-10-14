@@ -14,12 +14,12 @@ AR				= ar rcs
 CC				= cc
 FLAGS 			= -Wall -Wextra -Werror
 
-%.o: %.c		$(HEADER) Makefile
+%.o:			%.c $(HEADER) Makefile
 					@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-all:			$(NAME) bonus
+all:			$(NAME)
 
-$(NAME):		$(OBJS) 
+$(NAME):		$(OBJS)
 					@$(AR) $(NAME) $(OBJS)
 
 clean:	
