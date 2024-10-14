@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/14 17:15:13 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/14 17:08:19 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/14 17:13:00 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	int a = 12;
-	int b = 11;
-	int c = 10;
+	int	count;
 
-	t_list *lst;
-	ft_lstadd_front(&lst, ft_lstnew(&b));
-	ft_lstadd_front(&lst, ft_lstnew(&c));
-
-	printf("%d\n", ft_lstsize(lst));
-	(void)lst;
-	(void)argc;
-	(void)argv;
-	return (0);
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		++count;
+	}
+	return (count);
 }
