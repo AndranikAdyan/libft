@@ -12,7 +12,7 @@ HEADER			= libft.h
 RM				= rm -f
 AR				= ar rcs
 CC				= cc
-FLAGS 			= -Wall -Wextra -Werror
+FLAGS 			= -Wall -Wextra -Werror -g3
 
 %.o:			%.c $(HEADER) Makefile
 					@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
