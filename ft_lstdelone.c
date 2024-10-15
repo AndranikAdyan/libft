@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/14 17:44:26 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/14 17:46:01 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/15 16:21:26 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int		a;
-	int		b;
-	int		c;
-	t_list	*lst;
-
-	a = 10;
-	b = 11;
-	c = 12;
-	lst = ft_lstnew(&a);
-	ft_lstadd_back(&lst, ft_lstnew(&b));
-	ft_lstadd_back(&lst, ft_lstnew(&c));
-	printf("\nList\n");
-	while (lst)
-	{
-		printf("%d ", *(int *)lst->content);
-		lst = lst->next;
-	}
-	(void)lst;
-	(void)argc;
-	(void)argv;
-	return (0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
