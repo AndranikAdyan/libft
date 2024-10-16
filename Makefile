@@ -1,6 +1,6 @@
 NAME			= libft.a
 
-SRCS			= $(shell find . -name '*.c' ! -name 'ft_lst*.c')
+SRCS			= $(shell find . -name '*.c' ! -name 'ft_lst*.c' ! -name main.c)
 
 OBJS			= $(SRCS:.c=.o)
 
@@ -12,9 +12,9 @@ HEADER			= libft.h
 RM				= rm -f
 AR				= ar rcs
 CC				= cc
-FLAGS 			= -Wall -Wextra -Werror -g3
+FLAGS 			= -fsanitize=address -Wall -Wextra -Werror -g3
 
-%.o:			%.c $(HEADER) Makefile
+%.o: %.c		$(HEADER) Makefile
 					@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 all:			$(NAME)
