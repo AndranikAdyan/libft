@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:29:15 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/17 21:18:41 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/17 21:19:40 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			*lst = new;
 		else
 		{
-			tmp = ft_lstlast(*lst));
+			tmp = ft_lstlast(*lst);
 			tmp->next = new;
 		}
 	}
