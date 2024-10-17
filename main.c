@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/17 00:36:43 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/17 20:29:39 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,17 @@ void	del(void *content)
 	(void)content;
 }
 
+void	f(void *content)
+{
+	*(int *)content *= 10;
+}
+
 int	main(int argc, char **argv)
 {
 	int		a;
 	int		b;
 	int		c;
+	t_list	*tmp;
 	t_list	*lst;
 
 	a = 10;
@@ -30,6 +36,20 @@ int	main(int argc, char **argv)
 	lst = ft_lstnew(&a);
 	ft_lstadd_back(&lst, ft_lstnew(&b));
 	ft_lstadd_back(&lst, ft_lstnew(&c));
+	tmp = lst;
+	while (tmp)
+	{
+		printf("%d ", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	ft_lstiter(lst, f);
+	tmp = lst;
+	while (tmp)
+	{
+		printf("%d ", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
 	ft_lstclear(&lst, del);
 	(void)lst;
 	(void)argc;
