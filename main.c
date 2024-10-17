@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 21:38:07 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/17 20:29:39 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/17 20:31:41 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@ int	main(int argc, char **argv)
 	lst = ft_lstnew(&a);
 	ft_lstadd_back(&lst, ft_lstnew(&b));
 	ft_lstadd_back(&lst, ft_lstnew(&c));
-	tmp = lst;
-	while (tmp)
-	{
-		printf("%d ", *(int *)tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n");
 	ft_lstiter(lst, f);
 	tmp = lst;
 	while (tmp)
