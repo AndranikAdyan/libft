@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 11:47:54 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/09 17:50:17 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/22 19:01:20 by aadyan            #+#    #+#             */
+/*   Updated: 2024/10/22 19:01:21 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,17 @@ int	in_str(char c, char const *str)
 	return (0);
 }
 
-int	get_count(char const *str, char const *chrs)
+int	get_arr(int start, int end, char *arr, char const *s1)
 {
 	int	i;
-	int	j;
-	int	count;
 
 	i = 0;
-	j = 0;
-	count = 0;
-	while (str[i])
+	while (start + i <= end)
 	{
-		j = 0;
-		while (chrs[j])
-		{
-			if (str[i] != chrs[j])
-				++count;
-			++j;
-		}
+		arr[i] = s1[start + i];
 		++i;
 	}
-	return (count);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -58,20 +48,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	arr = (char *)malloc((get_count(s1, set) + 1) * sizeof(char));
-	if (!arr)
-		return (NULL);
 	end = ft_strlen(s1) - 1;
-	while (s1[end] && in_str(s1[end], set))
+	while (end >= 0 && in_str(s1[end], set))
 		--end;
 	start = 0;
 	while (s1[start] && in_str(s1[start], set))
 		++start;
-	i = 0;
-	while (start + i <= end)
-	{
-		arr[i] = s1[start + i];
-		++i;
-	}
+	if (start > end)
+		return (ft_strdup(""));
+	arr = (char *)malloc((end - start + 2) * sizeof(char));
+	if (!arr)
+		return (NULL);
+	i = get_arr(start, end, arr, s1);
+	arr[i] = '\0';
 	return (arr);
 }
