@@ -6,11 +6,25 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 15:26:50 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 15:42:32 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/23 16:12:57 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		++i;
+	}
+	dest[i] = src[i];
+	return (dest);
+}
 
 int	get_len(int nb)
 {
@@ -19,16 +33,28 @@ int	get_len(int nb)
 
 	n = 1;
 	count = 0;
+	if (nb < 0)
+	{
+		if (nb == -2147483648)
+			return (11);
+		nb = -nb;
+		++count;
+	}
 	while (nb / n >= 10)
 	{
 		n *= 10;
 		++count;
 	}
-	return (count);
+	return (count + 1);
 }
 
 char	*get_num(char *num, int nb, int n, int i)
 {
+	if (nb == -2147483648)
+	{
+		ft_strcpy(num, "-2147483648");
+		return (num);
+	}
 	while (n > 0)
 	{
 		num[i] = (nb / n) + '0';
@@ -36,6 +62,7 @@ char	*get_num(char *num, int nb, int n, int i)
 		n /= 10;
 		i++;
 	}
+	num[i] = 0;
 	return (num);
 }
 
@@ -45,12 +72,9 @@ char	*ft_itoa(int nb)
 	int		i;
 	char	*num;
 
-	num = (char *)malloc(get_len(nb) * sizeof(char));
-	if (nb == -2147483648)
-	{
-		num = "-2147483648";
-		return (num);
-	}
+	num = (char *)malloc((get_len(nb) + 1) * sizeof(char));
+	if (!num)
+		return (NULL);
 	i = 0;
 	if (nb < 0)
 	{
@@ -64,3 +88,10 @@ char	*ft_itoa(int nb)
 	num = get_num(num, nb, n, i);
 	return (num);
 }
+
+// #include <string.h>
+// int main()
+// {
+// 	printf("%s", ft_itoa(-2147483647 -1));
+// 	return 0;
+// }
