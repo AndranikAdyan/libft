@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:11:25 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/11 15:23:46 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/22 19:33:35 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ int	words_count(char const *str, char c)
 	return (count);
 }
 
-char	**allocate_matrix(char **matrix, char const *str, char c)
+char	**allocate_matrix(char **matrix, char const *str, char c, int i)
 {
-	int	i;
 	int	count;
 	int	row;
 
-	i = 0;
 	count = 0;
 	row = 0;
 	while (str[i])
@@ -55,6 +53,8 @@ char	**allocate_matrix(char **matrix, char const *str, char c)
 		if (count)
 		{
 			matrix[row] = (char *)malloc((count + 1) * sizeof(char));
+			if (!matrix[row])
+				return NULL;
 			row++;
 		}
 	}
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)malloc((words_count(s, c) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	arr = allocate_matrix(arr, s, c);
+	arr = allocate_matrix(arr, s, c, 0);
 	arr = fill_matrix(arr, s, c);
 	return (arr);
 }
