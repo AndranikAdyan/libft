@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:11:25 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/22 19:33:35 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/23 12:58:12 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**allocate_matrix(char **matrix, char const *str, char c, int i)
 		{
 			matrix[row] = (char *)malloc((count + 1) * sizeof(char));
 			if (!matrix[row])
-				return NULL;
+				return (NULL);
 			row++;
 		}
 	}
