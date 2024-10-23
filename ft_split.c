@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:11:25 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/23 12:58:12 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/23 16:37:02 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	arr = (char **)malloc((words_count(s, c) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);

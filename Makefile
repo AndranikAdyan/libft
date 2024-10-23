@@ -1,35 +1,35 @@
-NAME			= libft.a
+NAME		= libft.a
+SO_NAME		= libft.so
 
-SRCS			= $(shell find . -name '*.c' ! -name 'ft_lst*.c' ! -name main.c)
+SRCS		= $(shell find . -name '*.c' ! -name 'ft_lst*.c' ! -name main.c)
+OBJS		= $(SRCS:.c=.o)
 
-OBJS			= $(SRCS:.c=.o)
+BONUS		= $(shell find . -name 'ft_lst*.c')
+BONUS_OBJS	= $(BONUS:.c=.o)
 
-BONUS			= $(shell find . -name 'ft_lst*.c')
+HEADER	= libft.h
+RM		= rm -f
+AR		= ar rcs
+CC		= cc
+FLAGS	= -Wall -Wextra -Werror -fsanitize=address -g3
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+%.o: %.c	$(HEADER) Makefile
+		@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-HEADER			= libft.h
-RM				= rm -f
-AR				= ar rcs
-CC				= cc
-FLAGS 			= -fsanitize=address -Wall -Wextra -Werror -g3
+all:	$(NAME)
 
-%.o: %.c		$(HEADER) Makefile
-					@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+$(NAME):	$(OBJS)
+		@$(AR) $(NAME) $(OBJS)
 
-all:			$(NAME)
+clean:
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
-$(NAME):		$(OBJS)
-					@$(AR) $(NAME) $(OBJS)
+fclean:	clean
+		@$(RM) $(NAME) $(SO_NAME)
 
-clean:	
-				@$(RM) $(OBJS) $(BONUS_OBJS)
+re:		fclean all
 
-fclean:			clean
-					@$(RM) $(NAME)
+bonus:	$(OBJS) $(BONUS_OBJS)
+		@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
-re: 			fclean all
-bonus:			$(OBJS) $(BONUS_OBJS)
-					@$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+.PHONY:	all clean fclean re bonus
