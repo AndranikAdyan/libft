@@ -19,9 +19,6 @@ CFLAGS	= -Wall -Wextra -Werror -fPIC  # Added -fPIC here for position-independen
 
 all:	$(NAME)
 
-so:		$(OBJS)
-		@$(CC) -nostartfiles -shared -o $(SO_NAME) $(OBJS)
-
 $(NAME):	$(OBJS)
 		@$(AR) $(NAME) $(OBJS)
 
