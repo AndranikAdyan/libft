@@ -11,11 +11,10 @@ HEADER	= libft.h
 RM		= rm -f
 AR		= ar rcs
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -fPIC  # Added -fPIC here for position-independent code
-# FLAGS	= -fsanitize=address -g3
+CFLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c	$(HEADER) Makefile
-		@$(CC) $(FLAGS) $(CFLAGS) -c $< -o $(<:.c=.o)
+		@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
 
