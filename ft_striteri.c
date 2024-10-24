@@ -6,9 +6,11 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:30:53 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/23 16:37:09 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/24 16:20:42 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

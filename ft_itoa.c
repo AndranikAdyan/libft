@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 15:26:50 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/23 16:12:57 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/24 16:16:21 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,3 @@ char	*ft_itoa(int nb)
 	num = get_num(num, nb, n, i);
 	return (num);
 }
-
-// #include <string.h>
-// int main()
-// {
-// 	printf("%s", ft_itoa(-2147483647 -1));
-// 	return 0;
-// }

@@ -11,12 +11,16 @@ HEADER	= libft.h
 RM		= rm -f
 AR		= ar rcs
 CC		= cc
-FLAGS	= -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS	= -Wall -Wextra -Werror -fPIC  # Added -fPIC here for position-independent code
+# FLAGS	= -fsanitize=address -g3
 
 %.o: %.c	$(HEADER) Makefile
-		@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+		@$(CC) $(FLAGS) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
+
+so:		$(OBJS)
+		@$(CC) -nostartfiles -shared -o $(SO_NAME) $(OBJS)
 
 $(NAME):	$(OBJS)
 		@$(AR) $(NAME) $(OBJS)

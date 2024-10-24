@@ -6,12 +6,11 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 23:06:14 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/21 17:30:32 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/24 16:20:58 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
