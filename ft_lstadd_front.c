@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:52:36 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/14 17:05:23 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/29 11:38:05 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new || !lst || !(*lst))
+	if (!new || !lst)
 		return ;
 	new->next = *lst;
 	*lst = new;
