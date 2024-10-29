@@ -6,12 +6,12 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:56:27 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/28 21:15:44 by aadyan           ###   ########.fr       */
+/*   Updated: 2024/10/29 11:29:11 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stddef.h>
+#include "libft.h"
+
 int	ft_strlen(const char *str)
 {
 	int	i;
@@ -46,11 +46,4 @@ char	*ft_strnstr(char *str, char *to_find, int n)
 		++i;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int main()
-{
-	printf("%s", ft_strnstr("Hello woworld 1234", "world", 16));
-	return 0;
 }
