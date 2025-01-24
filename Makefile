@@ -1,5 +1,4 @@
 NAME		= libft.a
-SO_NAME		= libft.so
 
 SRCS		= $(shell find . -name '*.c' ! -name 'ft_lst*.c' ! -name main.c)
 OBJS		= $(SRCS:.c=.o)
@@ -25,7 +24,7 @@ clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-		@$(RM) $(NAME) $(SO_NAME)
+		@$(RM) $(NAME)
 
 re:		fclean all
 

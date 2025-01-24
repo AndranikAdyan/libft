@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 19:05:58 by aadyan            #+#    #+#             */
-/*   Updated: 2024/08/28 15:07:29 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/14 19:33:33 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
-	size_t			i;
-
-	p = s;
-	i = 0;
-	while (i < n)
-		p[i++] = 0;
+	ft_memset(s, 0, n);
 }
