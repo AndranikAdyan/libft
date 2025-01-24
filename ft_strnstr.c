@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:56:27 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/29 12:12:20 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/24 23:29:56 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	int		i;
+	size_t	i;
 	int		k;
 	int		size;
 

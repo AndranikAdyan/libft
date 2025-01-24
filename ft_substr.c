@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 21:01:17 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/29 14:08:17 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/24 23:30:14 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_malloc_size(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[start + i] && i < len)
