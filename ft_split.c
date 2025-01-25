@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:11:25 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/24 16:20:47 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/25 18:25:28 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	words_count(char const *str, char c)
+static int	words_count(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -32,7 +32,7 @@ int	words_count(char const *str, char c)
 	return (count);
 }
 
-char	**allocate_matrix(char **matrix, char const *str, char c, int i)
+static char	**allocate_matrix(char **matrix, char const *str, char c, int i)
 {
 	int	count;
 	int	row;
@@ -60,7 +60,7 @@ char	**allocate_matrix(char **matrix, char const *str, char c, int i)
 	return (matrix);
 }
 
-char	**fill_matrix(char **arr, char const *s, char c)
+static char	**fill_matrix(char **arr, char const *s, char c)
 {
 	int	i;
 	int	row;

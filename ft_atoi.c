@@ -6,18 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 00:33:59 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/21 19:35:36 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/25 18:27:06 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-int	is_space(char c)
+static int	is_space(char c)
 {
 	return (c == ' ' || c == '\t' \
 			|| c == '\r' || c == '\v' \
@@ -34,7 +29,7 @@ int	ft_atoi(const char *nptr)
 	while (is_space(nptr[i]))
 		++i;
 	sign = 1;
-	if (!is_digit(nptr[i]))
+	if (!ft_isdigit(nptr[i]))
 	{
 		if (nptr[i] == '-')
 			sign = -1;
@@ -43,7 +38,7 @@ int	ft_atoi(const char *nptr)
 		++i;
 	}
 	num = 0;
-	while (is_digit(nptr[i]))
+	while (ft_isdigit(nptr[i]))
 	{
 		num *= 10;
 		num += nptr[i] - '0';

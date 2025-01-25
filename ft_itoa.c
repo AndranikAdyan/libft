@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 15:26:50 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/24 16:16:21 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/25 18:24:09 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-int	get_len(int nb)
+static int	get_len(int nb)
 {
 	int	n;
 	int	count;
@@ -48,7 +48,7 @@ int	get_len(int nb)
 	return (count + 1);
 }
 
-char	*get_num(char *num, int nb, int n, int i)
+static char	*get_num(char *num, int nb, int n, int i)
 {
 	if (nb == -2147483648)
 	{

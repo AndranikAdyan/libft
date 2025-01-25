@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 19:01:20 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/22 19:01:21 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/01/25 18:26:16 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_str(char c, char const *str)
+static int	in_str(char c, char const *str)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	in_str(char c, char const *str)
 	return (0);
 }
 
-int	get_arr(int start, int end, char *arr, char const *s1)
+static int	get_arr(int start, int end, char *arr, char const *s1)
 {
 	int	i;
 
