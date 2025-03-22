@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 00:33:59 by aadyan            #+#    #+#             */
-/*   Updated: 2025/01/25 18:27:06 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/22 11:38:08 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_atoi(const char *nptr)
 	int	num;
 
 	i = 0;
+	if (!nptr || !*nptr)
+		return (0);
 	while (is_space(nptr[i]))
 		++i;
 	sign = 1;
@@ -41,8 +43,7 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		num *= 10;
-		num += nptr[i] - '0';
-		i++;
+		num += nptr[i++] - '0';
 	}
 	return (sign * num);
 }

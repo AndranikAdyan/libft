@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 17:05:38 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/27 17:30:48 by aadyan           ###   ########.fr       */
+/*   Created: 2024/10/06 20:12:23 by aadyan            #+#    #+#             */
+/*   Updated: 2025/03/22 11:40:37 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strdup(char *src)
 {
-	unsigned int	i;
-	unsigned int	dst_len;
+	char	*s;
+	int		i;
 
-	if (size == 0)
-		return (ft_strlen(src));
-	if (size <= (size_t)ft_strlen(dst))
-		return (size + ft_strlen(src));
-	dst_len = ft_strlen(dst);
+	s = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (src[i] && i < size - dst_len - 1)
+	while (src && src[i])
 	{
-		dst[dst_len + i] = src[i];
+		s[i] = src[i];
 		++i;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + ft_strlen(src));
+	s[i] = 0;
+	return (s);
 }
