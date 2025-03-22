@@ -64,9 +64,6 @@ $(NAME):	$(OBJS)
 $(BUILD):
 		@mkdir -p $(BUILD)
 
-echo:
-	@echo $(OBJS)
-
 clean:
 	rm -rf $(OBJS)
 
