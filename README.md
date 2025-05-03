@@ -4,19 +4,6 @@ This project is part of the 42 curriculum. The goal is to create a static librar
 
 ---
 
-## 📁 Project Structure
-
-```
-libft/
-├── ft_*.c           // Reimplemented functions
-├── ft_lst*.c        // Bonus linked list functions
-├── libft.h          // Function prototypes
-├── Makefile         // Compiles the library
-└── libft.a          // Static library (generated after make)
-```
-
----
-
 ## ✅ Mandatory Functions
 
 Reimplementations of C standard functions, including:
